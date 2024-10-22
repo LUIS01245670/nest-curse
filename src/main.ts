@@ -18,6 +18,6 @@ async function bootstrap() {
 const documentFactory = () => SwaggerModule.createDocument(app, config);
 SwaggerModule.setup('api', app, documentFactory);
   app.enableCors();//para que se pueda dar la  comunicaion entre diferentes dominios con origin {origin:http://} establesemos que dominio puedo estraer datos de este backend
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
